@@ -26,8 +26,6 @@ $(document).ready(function() {
 
     const getElements = function(response) {
       let bikeInfo = response.bikes.length;
-      console.log(bikeInfo);
-
 
       $(".display-para").show();
       $('#display-answer').empty().text(bikeInfo);
