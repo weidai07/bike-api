@@ -8,10 +8,11 @@ $(document).ready(function() {
 
   $('#submit-button').click(function() {
 
-  let city = $("#input-field").val();
+  let city = $("#city-input-field").val();
+  let miles = $("#miles-input-field").val();
 
     let request = new XMLHttpRequest();
-    const url = `https://cors-anywhere.herokuapp.com/https://bikeindex.org:443/api/v3/search?page=1&per_page=100&location=${city}&distance=1&stolenness=proximity`;
+    const url = `https://cors-anywhere.herokuapp.com/https://bikeindex.org:443/api/v3/search?page=1&per_page=100&location=${city}&distance=${miles}&stolenness=proximity`;
 
     request.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) {
@@ -27,7 +28,10 @@ $(document).ready(function() {
       let bikeInfo = response.bikes.length;
       console.log(bikeInfo);
 
-      $('.display-answer').html("<p>" + bikeInfo + "</p>");
+
+      $(".display-para").show();
+      $('#display-answer').empty().text(bikeInfo);
+      $("#distance-result").empty().text(miles);
     }
 
   });

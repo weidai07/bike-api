@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Bike API</title>
   </head>
   <body>
 
-    <h1>Bike API</h1>
+    <div class="container">
 
-    <label for="input-field">
-    <input id="input-field" type="text" name="" value="">
-    </label>
+      <h1>Bike API</h1>
+      <h2>Find the number of stolen Bikes in any given city.</h2>
 
-    <button id="submit-button" type="button" name="button">Submit</button>
+      <div class="labels container card">
+        <label for="city-input-field">
+        Enter City:
+        <input id="city-input-field" type="text" name="" value="">
+        </label>
+        <br>
+        <label for="miles-input-field">
+        Search Radius:
+        <input id="miles-input-field" type="text" name="" value="">
+        </label>
+      </div>
 
-    <div class="display-answer">
+
+
+      <button id="submit-button" type="button" name="button">Submit</button>
+
+      <div class="display-para card">
+        <h3>There are <span id="display-answer"></span> stolen bikes within a  <span id="distance-result"></span> mile radius.</h3>
+      </div>
 
     </div>
+
+
 
   </body>
 </html>
